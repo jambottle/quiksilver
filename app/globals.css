@@ -26,6 +26,12 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer components {
+  .quiksilver-layout {
+    @apply h-screen mx-auto p-2;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
