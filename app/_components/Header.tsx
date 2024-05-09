@@ -10,6 +10,7 @@ type Page = {
 };
 
 const pages: Page[] = [
+  { path: '/', title: 'Home' },
   { path: '/about', title: 'About' },
   { path: '/products', title: 'Products' },
   { path: '/services', title: 'Services' },
