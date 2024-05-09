@@ -28,7 +28,7 @@ body {
 
 @layer components {
   .quiksilver-layout {
-    @apply h-screen mx-auto p-2;
+    @apply min-h-screen p-2;
   }
 }
 
