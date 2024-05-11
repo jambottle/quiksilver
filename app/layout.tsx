@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Analytics } from '@vercel/analytics/react';
 
 import Footer from '@/_components/Footer';
+import FooterProvider from '@/_components/FooterProvider';
 import Header from '@/_components/Header';
 import { pretendard } from '@/fonts';
 import ReactQueryProvider from '@/provider';
@@ -19,7 +20,9 @@ export default function RootLayout({
         <body>
           <Header />
           <main className="quiksilver-layout">{children}</main>
-          <Footer />
+          <FooterProvider>
+            <Footer />
+          </FooterProvider>
           <Analytics />
           <ReactQueryDevtools initialIsOpen={false} />
         </body>

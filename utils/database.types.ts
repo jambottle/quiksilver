@@ -24,6 +24,54 @@ export type Database = {
         };
         Relationships: [];
       };
+      offices: {
+        Row: {
+          address_country: string | null;
+          address_locality: string | null;
+          address_region: string | null;
+          created_at: string | null;
+          detail_address: string | null;
+          email: string | null;
+          fax_number: string | null;
+          id: number;
+          is_head: boolean | null;
+          name: string | null;
+          postal_code: string | null;
+          street_address: string | null;
+          telephone: string | null;
+        };
+        Insert: {
+          address_country?: string | null;
+          address_locality?: string | null;
+          address_region?: string | null;
+          created_at?: string | null;
+          detail_address?: string | null;
+          email?: string | null;
+          fax_number?: string | null;
+          id?: number;
+          is_head?: boolean | null;
+          name?: string | null;
+          postal_code?: string | null;
+          street_address?: string | null;
+          telephone?: string | null;
+        };
+        Update: {
+          address_country?: string | null;
+          address_locality?: string | null;
+          address_region?: string | null;
+          created_at?: string | null;
+          detail_address?: string | null;
+          email?: string | null;
+          fax_number?: string | null;
+          id?: number;
+          is_head?: boolean | null;
+          name?: string | null;
+          postal_code?: string | null;
+          street_address?: string | null;
+          telephone?: string | null;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;
