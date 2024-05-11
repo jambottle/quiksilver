@@ -19,6 +19,7 @@
     ],
     "paths": {
       "@/*": ["./app/*"],
+      "@/queries/*": ["./queries/*"],
       "@/utils/*": ["./utils/*"]
     }
   },
