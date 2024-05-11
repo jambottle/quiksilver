@@ -1,13 +1,13 @@
-import '@/globals.css';
+import '@/app/globals.css';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Analytics } from '@vercel/analytics/react';
 
-import Footer from '@/_components/Footer';
-import FooterProvider from '@/_components/FooterProvider';
-import Header from '@/_components/Header';
-import { pretendard } from '@/fonts';
-import ReactQueryProvider from '@/provider';
+import { pretendard } from '@/app/fonts';
+import ReactQueryProvider from '@/app/provider';
+import Footer from '@/components/Footer';
+import FooterProvider from '@/components/FooterProvider';
+import Header from '@/components/Header';
 
 export default function RootLayout({
   children,

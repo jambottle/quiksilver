@@ -6,8 +6,8 @@ import {
 } from '@tanstack/react-query';
 import { cookies } from 'next/headers';
 
+import Country from '@/app/ssrcountries/country';
 import { getCountryById } from '@/queries/get-country-by-id';
-import Country from '@/ssrcountries/country';
 import useSupabaseServer from '@/utils/supabase-server';
 
 export default async function CountryPage({
