@@ -24,6 +24,30 @@ export type Database = {
         };
         Relationships: [];
       };
+      menus: {
+        Row: {
+          id: number;
+          is_active: boolean | null;
+          order: number | null;
+          path: string | null;
+          title: string | null;
+        };
+        Insert: {
+          id?: number;
+          is_active?: boolean | null;
+          order?: number | null;
+          path?: string | null;
+          title?: string | null;
+        };
+        Update: {
+          id?: number;
+          is_active?: boolean | null;
+          order?: number | null;
+          path?: string | null;
+          title?: string | null;
+        };
+        Relationships: [];
+      };
       offices: {
         Row: {
           address_country: string | null;

@@ -1,25 +1,18 @@
 'use client';
 
+import { useQuery } from '@supabase-cache-helpers/postgrest-react-query';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-type Page = {
-  path: string;
-  title: string;
-};
-
-const pages: Page[] = [
-  { path: '/', title: 'Home' },
-  { path: '/about', title: 'About' },
-  { path: '/products', title: 'Products' },
-  { path: '/services', title: 'Services' },
-  { path: '/works', title: 'Works' },
-  { path: '/contact-us', title: 'Contact us' },
-];
+import { getHeaderMenus } from '@/queries/get-header-menus';
+import useSupabaseBrowser from '@/utils/supabase-browser';
 
 export default function Header() {
   const currPath = usePathname();
+
+  const supabase = useSupabaseBrowser();
+  const { data: menus } = useQuery(getHeaderMenus(supabase));
 
   return (
     <header className="p-2 bg-white">
@@ -35,9 +28,9 @@ export default function Header() {
         </Link>
 
         <ul className="flex flex-row justify-center items-center space-x-4">
-          {pages.map(({ path, title }, index) => (
+          {menus?.map(({ path, title }, index) => (
             <li key={index} className={path !== currPath ? 'opacity-30' : ''}>
-              <Link href={path}>{title}</Link>
+              <Link href={path ?? '/not-found'}>{title}</Link>
             </li>
           ))}
         </ul>

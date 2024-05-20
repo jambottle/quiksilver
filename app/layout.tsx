@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { pretendard } from '@/app/fonts';
 import ReactQueryProvider from '@/app/provider';
 import Footer from '@/components/Footer';
-import FooterProvider from '@/components/FooterProvider';
+import GlobalHydrationBoundary from '@/components/GlobalHydrationBoundary';
 import Header from '@/components/Header';
 
 export default function RootLayout({
@@ -18,11 +18,11 @@ export default function RootLayout({
     <ReactQueryProvider>
       <html lang="ko" className={pretendard.variable}>
         <body>
-          <Header />
-          <main className="quiksilver-layout">{children}</main>
-          <FooterProvider>
+          <GlobalHydrationBoundary>
+            <Header />
+            <main className="quiksilver-layout">{children}</main>
             <Footer />
-          </FooterProvider>
+          </GlobalHydrationBoundary>
           <Analytics />
           <ReactQueryDevtools initialIsOpen={false} />
         </body>

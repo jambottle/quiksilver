@@ -6,10 +6,11 @@ import {
 } from '@tanstack/react-query';
 import { cookies } from 'next/headers';
 
+import { getHeaderMenus } from '@/queries/get-header-menus';
 import { getLatestHeadOffice } from '@/queries/get-latest-head-office';
 import useSupabaseServer from '@/utils/supabase-server';
 
-export default async function FooterProvider({
+export default async function GlobalHydrationBoundary({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -18,6 +19,7 @@ export default async function FooterProvider({
   const cookieStore = cookies();
   const supabase = useSupabaseServer(cookieStore);
 
+  await prefetchQuery(queryClient, getHeaderMenus(supabase));
   await prefetchQuery(queryClient, getLatestHeadOffice(supabase));
 
   return (
