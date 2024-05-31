@@ -7,6 +7,10 @@ const nextConfig = {
         hostname: 'static.sto-net.com',
         pathname: '/logos/sto',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };
