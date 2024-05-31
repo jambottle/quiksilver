@@ -35,7 +35,7 @@ body {
 
 @layer components {
   .quiksilver-layout {
-    @apply min-h-screen p-2;
+    @apply min-h-screen w-full;
   }
 }
 
